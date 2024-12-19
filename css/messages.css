@@ -1,0 +1,88 @@
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f8fa;
+    color: #14171a;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #1da1f2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #1991da;
+}
+
+
+#output {
+    width: 80%;
+    margin: 2rem auto;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+
+.message {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 1rem;
+    border-bottom: 1px solid #e1e8ed;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+
+.message hr {
+    display: none; 
+}
+
+.message > div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.message-content {
+    margin-bottom: 0.5rem;
+    color: #14171a;
+}
+
+
+.message button {
+    padding: 0.3rem 0.8rem;
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.message button:hover {
+    background-color: #1991da;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #output {
+        width: 95%;
+    }
+
+    .message {
+        grid-template-columns: 1fr;
+    }
+}
