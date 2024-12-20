@@ -1,8 +1,8 @@
-# HobbyHub 
+# Jibber Jabber
 
 ## Project Overview
 
-**HobbyHub** is an online platform where users can post and share content related to their hobbies and interests. The site allows users to create posts, like or dislike content, interact through messages, and manage their profiles. It's a social hub for hobby enthusiasts to connect, share, and discover new activities.
+**Jibber Jabber** is an online chatroom platform where users can post and share content about their interests, ideas, have conversations, debates, and express the thoughts swimming around their head. The site allows users to create posts, like or dislike content, interact through messages, and manage their profiles. It's a friendly and safe virtual environment for like minded individuals to connect, share, and discover new friends.
 
 ## Table of Contents
 1. [Features](#features)
@@ -36,7 +36,6 @@
   
 - **Backend**:
   - Node.js (with Express.js)
-  - MongoDB for data storage
   - JSON Web Tokens (JWT) for user authentication
   - RESTful APIs for fetching data
 
@@ -48,8 +47,8 @@ To run this project locally, follow the steps below:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Salem-H/MicroBlogCapstone3
-    cd hobbyhub
+    git clone https://github.com/JunhoKim7/micro-blog2.git
+    cd 
     ```
 
 2. **Install dependencies**:
@@ -58,19 +57,7 @@ To run this project locally, follow the steps below:
     npm install
     ```
 
-
-3. **Set up environment variables**:
-    Ensure that your backend is properly configured with the required environment variables such as:
-    - `MONGODB_URI` (for MongoDB connection)
-    - `JWT_SECRET` (for JWT authentication)
-
-    These variables can be set in a `.env` file in the root directory:
-    ```plaintext
-    MONGODB_URI=mongodb://localhost:27017/hobbyhub
-    JWT_SECRET=your-jwt-secret
-    ```
-
-4. **Run the application**:
+3. **Run the application**:
     - For the backend:
       ```bash
       node server.js
@@ -94,30 +81,6 @@ Once you have the application running locally, you can interact with it by:
 5. **Profile Management**: Update your personal information and view your posts.
 
 ---
-## Interesting Code: DELETE POST
-```javascript 
-
-async function deleteLike(likeId){
-    const response = await fetch(
-        BASE_URL + "/api/likes/" + likeId, { 
-        method: "DELETE", 
-        headers: headersWithAuth(),
-    });
-    const object = await response.json();
-    return object;
-}
-
-
-   if (localStorage.username === m.username) {
-    deleteButton.addEventListener("click", async () => {
-        await deletePost(m._id);
-        window.location.reload(); // Refresh page
-    });
-    deleteButton.innerText = "Delete";
-  } else {
-    deleteButton.style.display = "none"; // Hide the delete button if the user is not the author
-  }
-```
 
 ## File Structure
 
@@ -125,23 +88,23 @@ Here’s an overview of the project structure:
 
 ## Screenshots
 
-### Landing Page/ Login Page
-![HobbyHub LandingPage](./img/pages/LandinPage.jpg)
+### Login Page
+![Jibber Jabber LoginPage](./img/bloglogin.png)
 
 ### Register Page/ SignUp Page
-![HobbyHub RegisterPage](./img/pages/RegisterPage.jpg)
+![Jibber Jabber RegisterPage](./img/blogsignup.png)
 
 ### Home Page
-![HobbyHub HoemPage](./img/pages/HomePage.jpg)
+![Jibber Jabber HomePage](./img/bloghome.png)
 
 ### Post Page
-![HobbyHub PostPage](./img/pages/PostPage.jpg)
+![Jibber Jabber PostPage](./img/blogpost.png)
 
 ### Messages Page
-![Jibber Jabber MessagesPage](./img/pages/MessagePage.jpg)
+![Jibber Jabber MessagesPage](./img/blogmessages.png)
 
 ### Profile Page
-![Jibber Jabber ProfilePage](./img/pages/ProfilePage.jpg)
+![Jibber Jabber ProfilePage](./img/blogprofile.png)
 
 
 
@@ -158,4 +121,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - To Kevin Long, my instructor for all the aid and information in fixing and adding to my code.
 - **https://www.svgrepo.com/** for the social media icons.
 
-#
+
