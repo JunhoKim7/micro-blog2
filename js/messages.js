@@ -11,18 +11,6 @@ function getMessage(m) {
     LIKES: ${m.likes.length}
   `;
 
-  function sortPosts(posts, sortBy) {
-    switch (sortBy) {
-        case 'recent':
-            return posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Most recent first
-        case 'author':
-            return posts.sort((a, b) => a.username.localeCompare(b.username)); // Sort alphabetically by username
-        case 'popularity':
-            return posts.sort((a, b) => b.likes.length - a.likes.length); // Most liked first
-        default:
-            return posts;
-    }
-  };
 
   const b = document.createElement("button");
   b.addEventListener("click", async ()=>{
@@ -45,8 +33,39 @@ function getMessage(m) {
   return e;
 }
 
+
+  function sortPosts(posts, sortBy) {
+    switch (sortBy) {
+        case 'recent':
+            return posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Most recent first
+        case 'author':
+            return posts.sort((a, b) => a.username.localeCompare(b.username)); // Sort alphabetically by username
+        case 'popularity':
+            return posts.sort((a, b) => b.likes.length - a.likes.length); // Most liked first
+        default:
+            return posts;
+    }
+  };
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   const messages = await getMessageList();
-  //output.innerHTML = messages.map(getMessage).join("<hr>\n")
+  
+  // Listen for changes in the sort options
+  const sortOptions = document.getElementById("sort-options");
+  sortOptions.addEventListener("change", async (event) => {
+    const sortBy = event.target.value;
+    const sortedMessages = sortPosts(messages, sortBy);
+    displayMessages(sortedMessages);
+  });
+  // Initially sort by recent posts
+  const sortBy = 'recent';
+  const sortedMessages = sortPosts(messages, sortBy);
+  displayMessages(sortedMessages);
+});
+
+function displayMessages(messages) {
+  const output = document.getElementById('output');
+  output.innerHTML = ''; // Clear previous messages
   messages.forEach(m => output.appendChild(getMessage(m)));
-});//end load
+}
