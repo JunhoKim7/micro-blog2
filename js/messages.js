@@ -10,6 +10,20 @@ function getMessage(m) {
     TEXT:  ${m.text}<br>\n
     LIKES: ${m.likes.length}
   `;
+
+  function sortPosts(posts, sortBy) {
+    switch (sortBy) {
+        case 'recent':
+            return posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Most recent first
+        case 'author':
+            return posts.sort((a, b) => a.username.localeCompare(b.username)); // Sort alphabetically by username
+        case 'popularity':
+            return posts.sort((a, b) => b.likes.length - a.likes.length); // Most liked first
+        default:
+            return posts;
+    }
+  };
+
   const b = document.createElement("button");
   b.addEventListener("click", async ()=>{
     //is username in list of likes?
@@ -26,10 +40,11 @@ function getMessage(m) {
   });//end click
   
   const like = m.likes.find(like=>like.username===localStorage.username);
-  b.innerText = like != undefined ? "UnLike" : "Like";
+  b.innerText = like != undefined ? "Unlike" : "Like";
   e.appendChild(b);
   return e;
 }
+
 document.addEventListener("DOMContentLoaded", async () => {
   const messages = await getMessageList();
   //output.innerHTML = messages.map(getMessage).join("<hr>\n")

@@ -1,0 +1,21 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: .5rem;
+}
+
+body {
+    text-align: center;
+    background-image: url('../img/pigeonbackground.jpg'); 
+    background-size: contain;        
+    background-repeat: no-repeat;   
+    background-position: center;    
+    background-attachment: fixed;   
+    color: #fff;                    
+}
+
+
+

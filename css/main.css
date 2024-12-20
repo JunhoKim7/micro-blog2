@@ -5,10 +5,10 @@
 }
 
 body {
-    background-color: #f5f8fa;
-    color: #14171a;
+    background-color: lightblue;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body > a {
@@ -25,6 +25,12 @@ body > a {
 
 body > a:hover {
     background-color: #1991da; 
+}
+
+h1{
+    font-size: x-large;
+    font-weight: 900;
+    font-family: ;
 }
 
 main > button {

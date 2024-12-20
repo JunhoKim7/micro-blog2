@@ -6,3 +6,19 @@
 h1{
     text-align: left;
 }
+
+.icon{
+    width: 20px;   
+    height: 20px;
+    vertical-align: text-bottom;
+}
+
+.logout{
+    text-align: center;
+}
+
+body{
+    background-color: lightblue;
+    text-align: center;
+    color: darkblue;
+}

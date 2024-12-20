@@ -1,5 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
+    const logOutButton = document.getElementById("logout");
+    logOutButton.addEventListener("click", async () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        alert("You have been logged out.");
+        window.location.href = "login.html";
+    });
     const p = await getProfile();
     username.innerText = p.username;
     fullName.value = p.fullName;
@@ -7,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     passwordInput.value = "password";
 
     saveUserProfile.addEventListener("click", async () => {
-        //TODO SAVE
+        
         const payload = {
             fullName: fullName.value,
             bio: bioText.value
@@ -18,4 +25,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         await saveProfile(payload);
         window.location.href = "messages.html"
     })
-});//end loaded
+});
